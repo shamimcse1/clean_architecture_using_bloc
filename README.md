@@ -56,6 +56,9 @@ The project follows a clean architecture structure with separation of concerns. 
 │   │   └── product_repository.dart
 │   └── usecases/
 │       └── get_products.dart
+├── di/
+│   ├── injection_container
+│ 
 ├── presentation/
 │   ├── bloc/
 │   │   └── product_bloc.dart
