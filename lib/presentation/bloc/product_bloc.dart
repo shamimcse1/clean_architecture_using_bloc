@@ -1,5 +1,6 @@
 
 import 'package:clean_architecture_using_bloc/presentation/bloc/product_event.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../domain/usecases/GetProducts.dart';
 import 'bloc_state.dart';
@@ -24,7 +25,9 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
         final products = await getProducts();
         emit(ProductLoaded(products));
       } catch (e) {
-        print('Error in ProductBloc: $e'); // Log the error
+        if (kDebugMode) {
+          print('Error in ProductBloc: $e');
+        } // Log the error
         emit(ProductError('Failed to fetch products'));
       }
     });

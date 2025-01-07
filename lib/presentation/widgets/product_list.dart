@@ -25,7 +25,7 @@ class ProductList extends StatelessWidget {
             itemBuilder: (context, index) {
               final product = state.products[index];
               return Card(
-                elevation: 2.0,
+                elevation: 1.0,
                 child: Column(
                   children: [
                     Expanded(
